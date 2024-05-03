@@ -1,51 +1,36 @@
-import 'package:bombon_crochet/screens/login_menu.dart';
-import 'package:bombon_crochet/screens/signin.dart';
+import 'package:bombon_crochet/screens/login/login_menu.dart';
+import 'package:bombon_crochet/screens/login/signin_screen.dart';
 import 'package:bombon_crochet/widgets/bombon_chrochet_logo.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
+import 'package:bombon_crochet/widgets/generic_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Welcome extends StatefulWidget {
+  const Welcome({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Welcome> createState() => _WelcomeState();
 }
 
-class _LoginState extends State<Login> {
+class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 600, vertical: 200),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 600, vertical: 200),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          BombonChrochetLogo(),
-          TitleText(),
-          LogInButton(),
-          SignInButton()
+          const BombonChrochetLogo(),
+          const TitleBombonChrochet(),
+          const LogInButton(),
+          GenericTextButton(
+              text: 'Nueva cuenta',
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SignIn())))
         ],
       ),
     );
-  }
-}
-
-class SignInButton extends StatelessWidget {
-  const SignInButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const SignIn()));
-        },
-        child: Text(
-          'Nueva cuenta',
-          style: GoogleFonts.merriweatherSans(),
-        ));
   }
 }
 
@@ -66,8 +51,8 @@ class LogInButton extends StatelessWidget {
   }
 }
 
-class TitleText extends StatelessWidget {
-  const TitleText({
+class TitleBombonChrochet extends StatelessWidget {
+  const TitleBombonChrochet({
     super.key,
   });
 

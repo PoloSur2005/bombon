@@ -1,6 +1,8 @@
 import 'package:bombon_crochet/widgets/bombon_chrochet_logo.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
+import 'package:bombon_crochet/widgets/generic_text_button.dart';
 import 'package:bombon_crochet/widgets/generic_textfield.dart';
+import 'package:bombon_crochet/screens/login/widgets/service_login_button.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -11,7 +13,7 @@ class SignIn extends StatelessWidget {
     return Scaffold(
         body: Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 600, vertical: 130),
+        padding: const EdgeInsets.symmetric(horizontal: 600, vertical: 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -35,7 +37,21 @@ class SignIn extends StatelessWidget {
                 icon: Icons.person_add_outlined,
                 width: 170,
                 text: 'Crear cuenta',
-                onPressed: () => () {})
+                onPressed: () => () {}),
+            GenericTextButton(
+                text: 'Iniciar sesión',
+                onPressed: () => Navigator.pop(context)),
+            Container(
+              width: 400,
+              height: 1,
+              color: const Color.fromRGBO(196, 198, 207, 1),
+            ),
+            const ServiceLoginButton(
+                text: 'Registrarse con Google',
+                image: 'images/logo_services/google.png'),
+            const ServiceLoginButton(
+                text: 'Continuar con Facebook',
+                image: 'images/logo_services/facebook.png')
           ],
         ),
       ),
