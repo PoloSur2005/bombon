@@ -1,3 +1,4 @@
+import 'package:bombon_crochet/screens/catalogo/home_screen.dart';
 import 'package:bombon_crochet/widgets/bombon_chrochet_logo.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
 import 'package:bombon_crochet/widgets/generic_text_button.dart';
@@ -5,9 +6,16 @@ import 'package:bombon_crochet/widgets/generic_textfield.dart';
 import 'package:bombon_crochet/screens/login/widgets/service_login_button.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
+import 'widgets/password_textfield.dart';
+
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +35,9 @@ class SignIn extends StatelessWidget {
             const GenericTextField(
                 icon: Icons.alternate_email, labelText: 'Correo electrónico'),
             //TODO: Crear un widget para el campo de contraseña
-            const GenericTextField(
+            const PasswordTextfield(
                 icon: Icons.password, labelText: 'Contraseña'),
-            const GenericTextField(
+            const PasswordTextfield(
               icon: Icons.password,
               labelText: 'Confirmar contraseña',
             ),
@@ -37,7 +45,10 @@ class SignIn extends StatelessWidget {
                 icon: Icons.person_add_outlined,
                 width: 170,
                 text: 'Crear cuenta',
-                onPressed: () => () {}),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()))),
             GenericTextButton(
                 text: 'Iniciar sesión',
                 onPressed: () => Navigator.pop(context)),

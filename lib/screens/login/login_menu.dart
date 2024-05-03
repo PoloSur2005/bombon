@@ -1,8 +1,11 @@
+import 'package:bombon_crochet/screens/catalogo/home_screen.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
 import 'package:bombon_crochet/widgets/generic_textfield.dart';
 import 'package:bombon_crochet/screens/login/widgets/service_login_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'widgets/password_textfield.dart';
 
 Future<dynamic> loginMenu(BuildContext context) {
   return showModalBottomSheet(
@@ -95,14 +98,15 @@ class MailLogin extends StatelessWidget {
         SizedBox(
           height: size,
         ),
-        const GenericTextField(labelText: 'Contraseña', icon: Icons.password),
+        const PasswordTextfield(labelText: 'Contraseña', icon: Icons.password),
         SizedBox(
           height: size,
         ),
         GenericButton(
           icon: Icons.login,
           text: 'Iniciar sesión',
-          onPressed: () => () {},
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen())),
           width: 170,
         )
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GenericOutlinedButton extends StatelessWidget {
   final String text;
@@ -9,7 +10,7 @@ class GenericOutlinedButton extends StatelessWidget {
   const GenericOutlinedButton(
       {super.key,
       required this.text,
-      this.onPressed,
+      required this.onPressed,
       required this.icon,
       this.width = 250,
       this.height = 45});
@@ -26,7 +27,10 @@ class GenericOutlinedButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Icon(icon),
-            Text(text),
+            Text(
+              text,
+              style: GoogleFonts.merriweatherSans(fontSize: 15),
+            ),
           ],
         ));
   }
