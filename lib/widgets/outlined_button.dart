@@ -11,15 +11,15 @@ class GenericOutlinedButton extends StatelessWidget {
       required this.text,
       this.onPressed,
       required this.icon,
-      this.width = 45,
-      this.height = 250});
+      this.width = 250,
+      this.height = 45});
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-            fixedSize: MaterialStateProperty.all(const Size(250.0, 45.0)),
+            fixedSize: MaterialStateProperty.all(Size(width, height)),
             foregroundColor: MaterialStateProperty.all(
                 const Color.fromRGBO(63, 95, 144, 1))),
         child: Row(

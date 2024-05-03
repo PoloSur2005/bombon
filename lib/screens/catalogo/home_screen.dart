@@ -20,7 +20,7 @@ class HomeScree extends StatelessWidget {
             GenericOutlinedButton(
               text: 'Luis Fernado',
               icon: Icons.account_circle_outlined,
-              width: 150,
+              width: 200,
             ),
           ]),
       body: const Row(
