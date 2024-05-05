@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../widgets/title.dart';
 
-class PersonalizarPedidos extends StatefulWidget {
-  const PersonalizarPedidos({super.key});
+class PedidosPendientes extends StatefulWidget {
+  const PedidosPendientes({super.key});
 
   @override
-  State<PersonalizarPedidos> createState() => _PersonalizarPedidosState();
+  State<PedidosPendientes> createState() => _PedidosPendientesState();
 }
 
-class _PersonalizarPedidosState extends State<PersonalizarPedidos> {
+class _PedidosPendientesState extends State<PedidosPendientes> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -20,9 +20,7 @@ class _PersonalizarPedidosState extends State<PersonalizarPedidos> {
           TitlePage(
             text: 'Registrar Pedido personalizado',
           ),
-          Text('Imagenes de ejemplo'),
-          Text('DescriptiveTextfield: figura'),
-          Text('DescriptiveTextfield: metodo de entrega')
+          Text('Lista de desplegables'),
         ],
       ),
     );

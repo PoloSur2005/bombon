@@ -1,4 +1,5 @@
 import 'package:bombon_crochet/widgets/generic_button.dart';
+import 'package:bombon_crochet/widgets/generic_textfield.dart';
 import 'package:flutter/material.dart';
 
 import '../product_data.dart';
@@ -16,7 +17,7 @@ class _RegistarPedidosState extends State<RegistarPedidos> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 500, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 600, vertical: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -30,9 +31,11 @@ class _RegistarPedidosState extends State<RegistarPedidos> {
             ),
             const MetodoPago(),
             GenericButton(
-                icon: Icons.shopping_cart_checkout_outlined,
-                text: 'Pedir',
-                onPressed: () {})
+              icon: Icons.shopping_cart_checkout_outlined,
+              text: 'Pedir',
+              onPressed: () {},
+              width: 120,
+            )
           ],
         ));
   }
@@ -45,27 +48,9 @@ class MetodoPago extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: Colors.black,
-          width: 2,
-        ),
-      ),
-      child: const Center(
-        child: Text(
-          'Método de Pago',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+    return const GenericTextField(
+      icon: Icons.credit_card,
+      labelText: 'Método de pago',
     );
   }
 }
@@ -83,18 +68,26 @@ class ListaPedidos extends StatelessWidget {
       height: 200,
       child: ListView(
         children: [
-          ...List.generate(5, (index) {
-            return ListTile(
-              leading: const FlutterLogo(size: 72.0),
-              title: Text(products[index].title),
-              subtitle: Text(products[index].description),
-              trailing: const Icon(Icons.edit_outlined),
+          ...List.generate(6, (index) {
+            return Column(
+              children: [
+                ListTile(
+                  leading: const FlutterLogo(size: 72.0),
+                  title: Text(products[index].title),
+                  subtitle: Text(products[index].description),
+                  trailing: const Icon(Icons.edit_outlined),
+                ),
+                const Divider(
+                  height: 0,
+                )
+              ],
             );
           }),
-          const Divider(),
-          const ListTile(
-            leading: Icon(Icons.phone),
-            title: Text('Teléfono'),
+          ListTile(
+            leading: const Icon(Icons.add_shopping_cart_outlined),
+            title: const Text('Añadir producto'),
+            //TODO: implmentar index de navbar en provider
+            onTap: () {},
           ),
         ],
       ),
