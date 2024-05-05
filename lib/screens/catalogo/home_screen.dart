@@ -1,5 +1,5 @@
-import 'package:bombon_crochet/screens/catalogo/routePages/carrito_compras.dart';
-import 'package:bombon_crochet/screens/catalogo/routePages/personalizar.dart';
+import 'package:bombon_crochet/screens/catalogo/routePages/registrar_pedidos.dart';
+import 'package:bombon_crochet/screens/catalogo/routePages/personalizar_pedidos.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(Icons.palette),
                 ),
                 const NavigationRailDestination(
-                  label: Text('Pago'),
+                  label: Text('Pagos'),
                   icon: Icon(Icons.credit_card),
                 ),
               ],
@@ -62,11 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget buildPages(int index) {
     switch (index) {
       case 0:
-        return const Pedido();
+        return const RegistarPedidos();
       case 1:
         return const Catalogo();
       case 2:
-        return const Personalizar();
+        return const PersonalizarPedidos();
       case 3:
         return const Pago();
       default:

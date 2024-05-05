@@ -1,10 +1,7 @@
-import 'package:bombon_crochet/screens/catalogo/home_screen.dart';
-import 'package:bombon_crochet/widgets/outlined_button.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class Pedido extends StatelessWidget {
-  const Pedido({super.key});
+class PedidosPendientes extends StatelessWidget {
+  const PedidosPendientes({super.key});
 
   @override
   Widget build(BuildContext context) {

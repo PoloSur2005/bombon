@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Personalizar extends StatelessWidget {
-  const Personalizar({super.key});
+class PersonalizarPedidos extends StatelessWidget {
+  const PersonalizarPedidos({super.key});
 
   @override
   Widget build(BuildContext context) {
