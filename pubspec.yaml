@@ -67,11 +67,21 @@ flutter:
     #Servicios de login
     - images/logo_services/google.png
     - images/logo_services/facebook.png
-    #Productos
+    #Productos(original)
     - images/products/ramo_girasoles.jpeg
     - images/products/ramo_grande_rosas.jpeg
     - images/products/ramo_rosas_conejitos.jpeg
     - images/products/ramo_variado.jpeg
+    - images/products/girasoles_colores.jpeg
+    - images/products/ramo_rosas_claras.jpeg
+    #Productos(recotados)
+    - images/products/ramo_girasoles.png
+    - images/products/ramo_grande_rosas.png
+    - images/products/ramo_rosas_conejitos.png
+    - images/products/ramo_variado.png
+    - images/products/girasoles_colores.png
+    - images/products/ramo_rosas_claras.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

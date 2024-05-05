@@ -34,7 +34,6 @@ class _SignInState extends State<SignIn> {
             const GenericTextField(icon: Icons.person, labelText: 'Nombre'),
             const GenericTextField(
                 icon: Icons.alternate_email, labelText: 'Correo electrónico'),
-            //TODO: Crear un widget para el campo de contraseña
             const PasswordTextfield(
                 icon: Icons.password, labelText: 'Contraseña'),
             const PasswordTextfield(

@@ -1,12 +1,7 @@
 import 'package:bombon_crochet/widgets/generic_button.dart';
 import 'package:bombon_crochet/widgets/outlined_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../custom_clip.dart';
 
 class ProductCard extends StatelessWidget {
   final String title;
@@ -33,50 +28,57 @@ class ProductCard extends StatelessWidget {
           border: Border.all(color: const Color.fromRGBO(203, 205, 213, 1)),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ClipPath(
-              clipper: HalfClipper(),
-              child: Image.asset(
-                image,
-                width: MediaQuery.of(context).size.width,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(10)),
+                  child: Image.asset(
+                    image,
+                    width: MediaQuery.of(context).size.width,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                  child: Text(
                     title,
                     style: GoogleFonts.rowdies(
                         fontSize: 30, fontWeight: FontWeight.w200),
                   ),
-                  Text('\$$price - $days días',
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Text('\$$price - $days días',
                       style: GoogleFonts.merriweatherSans(fontSize: 18)),
-                  Text(description,
-                      style: GoogleFonts.merriweatherSans(fontSize: 15)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GenericOutlinedButton(
-                          text: 'Mas info',
-                          icon: Icons.info_outline,
-                          width: 150,
-                          onPressed: () {},
-                        ),
-                        const SizedBox(width: 10),
-                        GenericButton(
-                            text: 'Comprar',
-                            icon: Icons.shopping_cart_checkout_outlined,
-                            width: 150,
-                            onPressed: () {})
-                      ],
-                    ),
-                  )
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(description,
+                  style: GoogleFonts.merriweatherSans(fontSize: 15)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GenericOutlinedButton(
+                    text: 'Mas info',
+                    icon: Icons.info_outline,
+                    width: 150,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(width: 10),
+                  GenericButton(
+                      text: 'Comprar',
+                      icon: Icons.shopping_cart_checkout_outlined,
+                      width: 150,
+                      onPressed: () {})
                 ],
               ),
             )
