@@ -1,5 +1,4 @@
 import 'package:bombon_crochet/provider.dart';
-import 'package:bombon_crochet/screens/catalogo/routePages/pedidos_pendientes.dart';
 import 'package:bombon_crochet/screens/login/welcome_screen.dart';
 import 'package:bombon_crochet/theme/theme.dart';
 import 'package:flutter/material.dart';
