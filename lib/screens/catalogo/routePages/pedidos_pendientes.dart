@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../widgets/title.dart';
 
@@ -12,15 +14,39 @@ class PedidosPendientes extends StatefulWidget {
 class _PedidosPendientesState extends State<PedidosPendientes> {
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 600, vertical: 40),
+    //TODO: implementar junto con navbar, pero sin ser una ruta
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 600, vertical: 40),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          TitlePage(
-            text: 'Registrar Pedido personalizado',
+          const TitlePage(
+            text: 'Pedidos Pendientes',
           ),
-          Text('Lista de desplegables'),
+          const SizedBox(
+            height: 60,
+          ),
+          SizedBox(
+            child: Container(
+              color: const Color.fromRGBO(249, 249, 255, 1),
+              height: size.height * 0.79,
+              child: ListView.separated(
+                itemCount: 20,
+                separatorBuilder: (context, index) => const Divider(),
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: const Icon(Icons.shopping_cart_outlined),
+                    title: const Text('Pedido realizado el 4 de mayo'),
+                    subtitle: const Text('2140.00 - 19 días - En proceso'),
+                    trailing: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.message_outlined),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );

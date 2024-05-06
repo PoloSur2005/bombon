@@ -2,7 +2,6 @@ import 'package:bombon_crochet/screens/catalogo/routePages/registrar_pedidos.dar
 import 'package:bombon_crochet/screens/catalogo/routePages/personalizar_pedidos.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../widgets/outlined_button.dart';
 import 'routePages/pago.dart';
 import 'routePages/catalogo.dart';

@@ -75,6 +75,7 @@ class ListaPedidos extends StatelessWidget {
                   leading: const FlutterLogo(size: 72.0),
                   title: Text(products[index].title),
                   subtitle: Text(products[index].description),
+                  //TODO: implementar textfield para editar cantidad de producto
                   trailing: const Icon(Icons.edit_outlined),
                 ),
                 const Divider(
