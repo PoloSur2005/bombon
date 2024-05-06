@@ -1,3 +1,4 @@
+import 'package:bombon_crochet/screens/catalogo/routePages/registrar_pedidos.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
 import 'package:bombon_crochet/widgets/outlined_button.dart';
 import 'package:flutter/material.dart';
@@ -75,10 +76,15 @@ class ProductCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   GenericButton(
-                      text: 'Comprar',
-                      icon: Icons.shopping_cart_checkout_outlined,
-                      width: 150,
-                      onPressed: () {})
+                    text: 'Comprar',
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                Material(child: const RegistarPedidos()))),
+                    icon: Icons.shopping_cart_checkout_outlined,
+                    width: 150,
+                  )
                 ],
               ),
             )

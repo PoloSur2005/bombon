@@ -1,10 +1,11 @@
-import 'package:bombon_crochet/screens/catalogo/routePages/registrar_pedidos.dart';
+import 'package:bombon_crochet/screens/catalogo/routePages/pedidos_pendientes.dart';
 import 'package:bombon_crochet/screens/catalogo/routePages/personalizar_pedidos.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../widgets/outlined_button.dart';
-import 'routePages/pago.dart';
 import 'routePages/catalogo.dart';
+import 'routePages/pago.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -61,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget buildPages(int index) {
     switch (index) {
       case 0:
-        return const RegistarPedidos();
+        return const PedidosPendientes();
       case 1:
         return const Catalogo();
       case 2:

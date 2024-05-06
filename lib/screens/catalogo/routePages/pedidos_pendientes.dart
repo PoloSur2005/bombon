@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../widgets/title.dart';
 
@@ -29,7 +27,7 @@ class _PedidosPendientesState extends State<PedidosPendientes> {
           SizedBox(
             child: Container(
               color: const Color.fromRGBO(249, 249, 255, 1),
-              height: size.height * 0.79,
+              height: size.height * 0.5,
               child: ListView.separated(
                 itemCount: 20,
                 separatorBuilder: (context, index) => const Divider(),

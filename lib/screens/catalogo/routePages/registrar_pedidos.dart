@@ -1,3 +1,4 @@
+import 'package:bombon_crochet/screens/catalogo/routePages/pedidos_pendientes.dart';
 import 'package:bombon_crochet/widgets/generic_button.dart';
 import 'package:bombon_crochet/widgets/generic_textfield.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,11 @@ class _RegistarPedidosState extends State<RegistarPedidos> {
             GenericButton(
               icon: Icons.shopping_cart_checkout_outlined,
               text: 'Pedir',
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Material(child: const PedidosPendientes()))),
               width: 120,
             )
           ],
@@ -65,7 +70,7 @@ class ListaPedidos extends StatelessWidget {
     List<Product> products = ProductData().products;
     return Container(
       color: const Color.fromRGBO(249, 249, 255, 1),
-      height: 200,
+      height: 190,
       child: ListView(
         children: [
           ...List.generate(6, (index) {
